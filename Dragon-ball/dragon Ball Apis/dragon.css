@@ -1,0 +1,151 @@
+#primero {
+  text-align: center;
+  color: #0D47A1;
+}
+
+#search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  border: 2px solid #FFD600;
+  border-radius: 25px;
+  padding-left: 45px;
+  color: #6890f0;
+  font-family: 'Pokemon Solid', sans-serif;
+  margin: 15px auto;
+  display: block;
+}
+
+.pokedex {
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  background-color: #F57C00;
+  border-radius: 10px;
+}
+
+.personaje-card {
+  height: 350px;
+  width: 200px;
+  margin: 10px;
+  border: 1px solid #FFD600;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s;
+}
+
+.personaje-card:hover {
+  transform: scale(1.05);
+}
+
+.personaje-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.personaje-card-front, .personaje-card-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.personaje-card-front {
+  background: #FFFFFF;
+  color: #0D47A1; 
+}
+.personaje-nivelPoder {
+  color: #283593;
+}
+
+.personaje-card-back {
+  background: #f7f7f7;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+.personaje-card-inner:hover .personaje-card-front {
+  transform: rotateY(180deg);
+}
+
+.personaje-card-inner:hover .personaje-card-back {
+  transform: rotateY(360deg);
+}
+
+.personaje-info {
+  text-align: center;
+  color: #FFD600; 
+}
+
+.personaje-info p {
+  margin: 5px 0;
+}
+
+.personaje-id {
+  font-weight: bold;
+  color: #283593; 
+}
+
+.personaje-nombre {
+  font-size: 1.2em;
+  color: #D32F2F;
+}
+
+.personaje-card-front img {
+  width: 100%;
+  height: 100%;
+  max-height: 250px; 
+  object-fit: contain; 
+  object-position: center; 
+  border-bottom: 1px solid #FFD600; 
+}
+
+@media (max-width: 1024px) {
+  .pokedex {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pokemon-card {
+    height: 350px;
+    width: 200px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pokedex {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pokemon-card {
+    height: 280px;
+    width: 200px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pokedex {
+    grid-template-columns: 1fr;
+  }
+
+  .pokemon-card {
+    height: 260px;
+    width: 200px;
+    margin: 10px;
+  }
+
+  .pokemon-card-inner {
+    transition: transform 0.5s ease;
+  }
+}
